@@ -4,7 +4,7 @@
 # E-mail    bayle.yann@live.fr
 # License   MIT
 # Created   25/05/2016
-# Updated   31/10/2016
+# Updated   23/02/2017
 # Version   1.0.0
 #
 
