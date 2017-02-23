@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+ISRC_country_repartition.png
+ISRC_valid.txt
+ISRC_year_distribution.png
