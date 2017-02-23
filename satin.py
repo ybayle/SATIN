@@ -33,6 +33,7 @@ import cartopy.io.shapereader as shpreader
 import isrc
 import requests
 import pprint
+from lxml.html import fromstring
 import string
 import json
 
@@ -120,8 +121,27 @@ def api_spotify(isrc):
     else:
         return data
 
-def track_info(isrc="USWB11200587"):
-    # FRX871572731
+import re
+
+def api_musicbrainz(isrc=None, mbid=None):
+    if isrc is not None:
+        url = "https://musicbrainz.org/isrc/" + isrc
+        resp = requests.get(url)
+        tree = fromstring(resp.content)
+        if isrc in tree.findtext('.//title'):
+            print("Musicbrainz has this ISRC here " + url)
+        else:
+            print("No data available by Musicbrainz API for ISRC " + isrc)
+    if mbid is not None:
+        url = "https://musicbrainz.org/recording/" + mbid
+        resp = requests.get(url)
+        tree = fromstring(resp.content)
+        if "by" in tree.findtext('.//title'):
+            print("Musicbrainz has this MBID here " + url)
+        else:
+            print("No data available by Musicbrainz API for MBID " + mbid)
+
+def track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb"):
     data = api_deezer(isrc)
     if data:
         deezer_fn = isrc + "_Deezer_info.json"
@@ -134,6 +154,7 @@ def track_info(isrc="USWB11200587"):
         with open(spotify_fn, "w") as filep:
             filep.write(json.dumps(data, indent=4))
         print("Spotify info found and written in file " + spotify_fn)
+    api_musicbrainz(isrc, mbid)
 
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description="SATIN's API")
@@ -166,4 +187,4 @@ if __name__ == "__main__":
     # isrc.plot_isrc_country_repartition(satin_file)
     # isrc.stat(satin_file)
     # display_lyrics()
-    track_info()
+    track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb")
