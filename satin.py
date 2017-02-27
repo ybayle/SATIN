@@ -4,7 +4,7 @@
 # E-mail    bayle.yann@live.fr
 # License   MIT
 # Created   23/02/2017
-# Updated   23/02/2017
+# Updated   27/02/2017
 # Version   1.0.0
 #
 
@@ -36,6 +36,7 @@ import pprint
 from lxml.html import fromstring
 import string
 import json
+from wordcloud import WordCloud
 
 def compare_results(groundtruths_file, dir_pred):
     """Description of compare_results
@@ -156,6 +157,22 @@ def track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb")
         print("Spotify info found and written in file " + spotify_fn)
     api_musicbrainz(isrc, mbid)
 
+def genres_word_cloud(infilename="SATIN.csv"):
+    genres = ""
+    with open(infilename, "r") as filep:
+        for line in filep:
+            row = line[:-1].split(",")
+            genres += row[-1].replace("_", " ") 
+
+    wordcloud = WordCloud(background_color="#FFFFFF").generate(genres)
+
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    # plt.show()
+    plt.savefig('genres_word_cloud.png')
+    plt.close()
+    print("Genres word cloud image saved")
+
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description="SATIN's API")
     PARSER.add_argument(
@@ -187,4 +204,5 @@ if __name__ == "__main__":
     # isrc.plot_isrc_country_repartition(satin_file)
     # isrc.stat(satin_file)
     # display_lyrics()
-    track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb")
+    # track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb")
+    genres_word_cloud()
