@@ -47,6 +47,7 @@ The commands that we will use for extracting new features are:
     - `java -jar ha-script.jar -a filters:chord_vectors -s .wav -t 0.07`
     - `java -jar ha-script.jar -a filters:key_vectors -s .wav -t 0.07`
 
+If you would like to see more features, please contact us.
 As the features in SOFT1 are too large to be shared on a GitHub repository, please [click here](http://yannbayle.fr/english/index.php) to download them.
 
 ## Installation 
@@ -82,3 +83,6 @@ In progress.
 - If you use SATIN and/or SOFT1, please [cite us accordingly](https://github.com/ybayle/SATIN/blob/master/citation.bib) (our related research paper can be found [here](https://www.researchgate.net/project/Toward-better-playlists-from-bigger-musical-databases-use-case-in-singing-voice-detection-at-track-scale)).
 - SATIN, SOFT1 and the code in this repository is licensed under the terms of the [MIT License](https://github.com/ybayle/SATIN/blob/master/LICENSE).
 - We are grateful to [Musixmatch](https://www.musixmatch.com/fr), [Deezer](http://www.deezer.com) and [Simbals](http://www.simbals.com) who made this study possible.
+
+## Contact
+For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](http://yannbayle.fr/english/index.php)
