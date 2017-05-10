@@ -85,7 +85,7 @@ def plot_isrc_country_repartition(isrc_filename="ISRC_valid.txt"):
     axe.outline_patch.set_edgecolor('white')
     cax = fig.add_axes([0.91, 0.2, 0.02, 0.6])
     mpl.colorbar.ColorbarBase(cax, cmap=cmap, norm=norm)
-    plt.savefig('ISRC_country_repartition.png')
+    plt.savefig('ISRC_country_repartition.eps')
     print("ISRC country repartition image saved")
 
 def stat(isrc_filename="ISRC_valid.txt"):
@@ -128,7 +128,7 @@ def plot_isrc_year_distribution(isrc_filename="ISRC_valid.txt"):
     axe.spines['right'].set_visible(False)
     axe.get_xaxis().tick_bottom()
     axe.get_yaxis().tick_left()
-    plt.savefig('ISRC_year_distribution.png')
+    plt.savefig('ISRC_year_distribution.eps')
     print("ISRC year distribution image saved")
 
 def abs_path_dir(dir_name):
@@ -228,7 +228,7 @@ if __name__ == "__main__":
         "--input_file",
         help="input file containing all ISRCs",
         type=str,
-        default="isrc.txt",
+        default="SATIN.csv",
         metavar="input_file")
     PARSER.add_argument(
         "-o",
@@ -250,4 +250,4 @@ if __name__ == "__main__":
         PARSER.parse_args().dir_input)
     plot_isrc_year_distribution()
     plot_isrc_country_repartition()
-    stat()
+    # stat()
