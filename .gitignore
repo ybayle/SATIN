@@ -89,8 +89,8 @@ ENV/
 .ropeproject
 
 # Custom ignore
-ISRC_country_repartition.png
-ISRC_valid.txt
-ISRC_year_distribution.png
-createSpotifyPlaylist.py
-utils_to_add.py
+satin/ISRC_country_repartition.png
+satin/ISRC_valid.txt
+satin/ISRC_year_distribution.png
+satin/createSpotifyPlaylist.py
+satin/utils_to_add.py

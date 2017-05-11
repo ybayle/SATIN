@@ -54,9 +54,9 @@ As the features in SOFT1 are too large to be shared on a GitHub repository, plea
 
 You can either fork the repo and launch `python satin.py`
 
-or you can type in your linux terminal `pip install bayle` and launch these two commands in your python interpreter:
+or you can type in your linux terminal `pip install satin` and launch these two commands in your python interpreter:
 ```
-from bayle import satin
+import satin
 satin.main()
 ```
 
