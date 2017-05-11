@@ -78,7 +78,7 @@ We hope that SATIN and SOFT1, in their current state, will be helpful in your re
 
 ## Documentation
 
-In progress.
+Please refer to the [wiki](https://github.com/ybayle/SATIN/wiki).
 
 ## License
 
@@ -87,9 +87,10 @@ In progress.
 - SATIN, SOFT1 and the code in this repository is licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
 
 ## Contact
+
 For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](http://yannbayle.fr/english/index.php)
 
 ## Acknowledgments
 
-The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
-We use this [tutorial](http://peterdowns.com/posts/first-time-with-pypi.html) for submitting our package to PyPI
+- The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
+- We use this [tutorial](http://peterdowns.com/posts/first-time-with-pypi.html) for submitting our package to PyPI
