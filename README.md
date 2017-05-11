@@ -84,7 +84,7 @@ Please refer to the [wiki](https://github.com/ybayle/SATIN/wiki).
 
 - If you use SATIN and/or SOFT1, please [cite us accordingly](https://github.com/ybayle/SATIN/blob/master/citation.bib) (our related research paper can be found [here](https://www.researchgate.net/project/Toward-better-playlists-from-bigger-musical-databases-use-case-in-singing-voice-detection-at-track-scale)).
 - We are grateful to [Musixmatch](https://www.musixmatch.com/fr), [Deezer](http://www.deezer.com) and [Simbals](http://www.simbals.com) who made this dataset possible.
-- SATIN, SOFT1 and the code in this repository is licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
+- SATIN, SOFT1 and the code in this repository is licensed under the terms of the [GNU Affero General Public License Version 3](https://github.com/ybayle/SATIN/blob/master/LICENSE.md).
 
 ## Contact
 
