@@ -2,7 +2,7 @@
 #
 # Author    Yann Bayle
 # E-mail    bayle.yann@live.fr
-# License   CC BY SA 4.0
+# License   GNU AGPL v3
 # Created   23/02/2017
 # Updated   11/05/2017
 # Version   1.0.0

@@ -2,9 +2,9 @@
 #
 # Author    Yann Bayle
 # E-mail    bayle.yann@live.fr
-# License   MIT
+# License   GNU AGPL v3
 # Created   25/05/2016
-# Updated   23/02/2017
+# Updated   11/05/2017
 # Version   1.0.0
 #
 
