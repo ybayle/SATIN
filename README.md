@@ -65,6 +65,9 @@ satin.main()
 - [Python 3](https://www.python.org/download/releases/3.0/)
 - [Cartopy](https://github.com/SciTools/cartopy)
 - [word_cloud](https://github.com/amueller/word_cloud)
+- [lxml](https://pypi.python.org/pypi/lxml/3.7.3)
+- [matplotlib](http://matplotlib.org/)
+- [requests](https://pypi.python.org/pypi/requests)
 
 ## Contributing
 
@@ -85,3 +88,8 @@ In progress.
 
 ## Contact
 For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](http://yannbayle.fr/english/index.php)
+
+## Acknowledgments
+
+The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
+We use this [tutorial](http://peterdowns.com/posts/first-time-with-pypi.html) for submitting our package to PyPI

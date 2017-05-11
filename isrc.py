@@ -86,9 +86,13 @@ def plot_isrc_country_repartition(isrc_filename="ISRC_valid.txt"):
     cax = fig.add_axes([0.91, 0.2, 0.02, 0.6])
     mpl.colorbar.ColorbarBase(cax, cmap=cmap, norm=norm)
     plt.savefig('ISRC_country_repartition.eps')
+    plt.close()
     print("ISRC country repartition image saved")
 
 def stat(isrc_filename="ISRC_valid.txt"):
+    """Description of stat
+    Display some statistics about the list of ISRC.
+    """
     isrcs = []
     max_year = 0
     min_year = 100
@@ -96,13 +100,13 @@ def stat(isrc_filename="ISRC_valid.txt"):
         for line in filep:
             year = int(line[5:7])
             isrcs.append(year)
-            if year < 20 and year > max_year:
+            if year < 16 and year > max_year:
                 max_year = year
-            if year > 20 and year < min_year:
+            if year > 17 and year < min_year:
                 min_year = year
-    print(str(len(isrcs)) + " ISRCs")
-    print("Starts in 19" + str(min_year))
-    print("Ends   in 20" + str(max_year))
+    print("There are " + str(len(isrcs)) + " ISRCs that")
+    print("\tStarts in 19" + str(min_year))
+    print("\tEnds   in 20" + str(max_year))
 
 def plot_isrc_year_distribution(isrc_filename="ISRC_valid.txt"):
     """Description of plot_isrc_year_distribution
@@ -129,6 +133,7 @@ def plot_isrc_year_distribution(isrc_filename="ISRC_valid.txt"):
     axe.get_xaxis().tick_bottom()
     axe.get_yaxis().tick_left()
     plt.savefig('ISRC_year_distribution.eps')
+    plt.close()
     print("ISRC year distribution image saved")
 
 def abs_path_dir(dir_name):
@@ -143,7 +148,7 @@ def abs_path_dir(dir_name):
         print("Invalid directory name: " + dir_name)
         sys.exit()
 
-def validate_isrc(isrc):
+def validate_isrc(isrc, year_min=17, year_max=18):
     """Description of validISRC
 
     Return True if isrc provided is valid, False otherwise
@@ -155,10 +160,7 @@ def validate_isrc(isrc):
         pattern = re.compile("[a-zA-Z]{2}[a-zA-Z0-9]{3}[0-9]{7}")
         if pattern.match(isrc):
             int_isrc = int(isrc[5:7])
-            if int_isrc >= 40 or int_isrc <= 16:
-                return True
-            # TODO to delete :
-            else:
+            if int_isrc >= year_min or int_isrc <= year_max:
                 return True
     return False
 
@@ -168,6 +170,7 @@ def validate_isrcs(infile="isrc.txt", outfile="ISRC_invalid.txt", indir=None):
     Validate a list of ISRCs contained into a file
     All line must only contain the ISRC and the \n
     """
+    print("Validating the list of ISRC")
     rm_infile = False
     if indir:
         indir = abs_path_dir(indir)
