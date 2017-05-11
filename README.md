@@ -52,13 +52,13 @@ As the features in SOFT1 are too large to be shared on a GitHub repository, plea
 
 ## Installation & Getting started
 
-You can either in your linux terminal `pip install bayle` and 
+You can either fork the repo and launch `python satin.py`
+
+or you can type in your linux terminal `pip install bayle` and launch these two commands in your python interpreter:
 ```
 from bayle import satin
 satin.main()
 ```
-
-or you can fork the repo and `python satin.py`
 
 ## Requirements/Dependencies
 
@@ -81,8 +81,7 @@ In progress.
 
 - If you use SATIN and/or SOFT1, please [cite us accordingly](https://github.com/ybayle/SATIN/blob/master/citation.bib) (our related research paper can be found [here](https://www.researchgate.net/project/Toward-better-playlists-from-bigger-musical-databases-use-case-in-singing-voice-detection-at-track-scale)).
 - We are grateful to [Musixmatch](https://www.musixmatch.com/fr), [Deezer](http://www.deezer.com) and [Simbals](http://www.simbals.com) who made this study possible.
-- SATIN, SOFT1 and the code in this repository is licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
+- SATIN, SOFT1 and the code in this repository is licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/>
 
 ## Contact
 For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](http://yannbayle.fr/english/index.php)
