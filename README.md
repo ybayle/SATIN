@@ -52,13 +52,7 @@ As the features in SOFT1 are too large to be shared on a GitHub repository, plea
 
 ## Installation & Getting started
 
-You can either fork the repo and launch `python satin.py`
-
-or you can type in your linux terminal `pip install satin` and launch these two commands in your python interpreter:
-```
-import satin
-satin.main()
-```
+Just fork the repo and launch `python satin.py`.
 
 ## Requirements/Dependencies
 
@@ -93,4 +87,3 @@ For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](h
 ## Acknowledgments
 
 - The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
-- We use this [tutorial](http://peterdowns.com/posts/first-time-with-pypi.html) for submitting our package to PyPI
