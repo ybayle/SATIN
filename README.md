@@ -74,16 +74,13 @@ We hope that SATIN and SOFT1, in their current state, will be helpful in your re
 
 Please refer to the [wiki](https://github.com/ybayle/SATIN/wiki).
 
-## License
+## License & acknowledgments
 
 - If you use SATIN and/or SOFT1, please [cite us accordingly](https://github.com/ybayle/SATIN/blob/master/citation.bib) (our related research paper can be found [here](https://www.researchgate.net/project/Toward-better-playlists-from-bigger-musical-databases-use-case-in-singing-voice-detection-at-track-scale)).
 - We are grateful to [Musixmatch](https://www.musixmatch.com/fr), [Deezer](http://www.deezer.com) and [Simbals](http://www.simbals.com) who made this dataset possible.
 - SATIN, SOFT1 and the code in this repository is licensed under the terms of the [GNU Affero General Public License Version 3](https://github.com/ybayle/SATIN/blob/master/LICENSE.md).
+- The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
 
 ## Contact
 
 For more information please contact bayle.yann@live.fr or visit [yannbayle.fr](http://yannbayle.fr/english/index.php)
-
-## Acknowledgments
-
-- The code syntax was validated by [PyLint](https://pypi.python.org/pypi/pylint).
