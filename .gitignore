@@ -96,3 +96,10 @@ bayle/satin/createSpotifyPlaylist.py
 bayle/satin/utils_to_add.py
 createSpotifyPlaylist.py
 utils_to_add.py
+ISRC_country_repartition.eps
+ISRC_valid.txt
+ISRC_year_distribution.eps
+USWB11200587_Deezer_info.json
+USWB11200587_Spotify_info.json
+lyrics.csv
+genres_word_cloud.png

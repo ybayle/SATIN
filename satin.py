@@ -23,11 +23,17 @@ python satin.py
 import os
 import json
 import argparse
+from statistics import stdev
+import numpy as np
 import requests
 import isrc
 import matplotlib.pyplot as plt
 from lxml.html import fromstring
 from wordcloud import WordCloud
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score
+from sklearn.neighbors import KNeighborsClassifier
 
 def api_musixmatch(url, params):
     """Description of api_musixmatch
@@ -152,6 +158,51 @@ def genres_word_cloud(infilename="SATIN.csv"):
     plt.close()
     print("Genres word cloud image saved")
 
+def disp_clf_results(precisions, recalls, fmeasures, accuracies):
+    """Description of disp_clf_results
+    Display the classification results ± the std
+    """
+    precision = sum(precisions) / float(len(precisions))
+    recall = sum(recalls) / float(len(recalls))
+    fmeasure = sum(fmeasures) / float(len(fmeasures))
+    accuracy = sum(accuracies) / float(len(accuracies))
+
+    print("Precision: %.3f ± %.3f" % (precision, stdev(precisions)))
+    print("Recall:    %.3f ± %.3f" % (recall, stdev(recalls)))
+    print("F-Measure: %.3f ± %.3f" % (fmeasure, stdev(fmeasures)))
+    print("Accuracy:  %.3f ± %.3f" % (accuracy, stdev(accuracies)))
+
+
+def cross_validation(train_filename, n_folds):
+    """Description of cross_validation
+    Process a 10-folds CV for the classification of Instrumentals and Songs
+    """
+    print("Cross-validation started")
+    features = []
+    groundtruths = []
+    with open(train_filename, "r") as filep:
+        for line in filep:
+            line = line.split(",")
+            features.append([float(x) for x in line[1:-1]])
+            groundtruths.append(line[-1][:-1])
+    features = np.array(features)
+    groundtruths = np.array(groundtruths)
+
+    skf = StratifiedKFold(n_splits=n_folds)
+    precisions = []
+    recalls = []
+    fmeasures = []
+    accuracies = []
+    clf = KNeighborsClassifier(5)
+    for train, test in skf.split(features, groundtruths):
+        clf.fit(features[train], groundtruths[train])
+        predictions = clf.predict(features[test])
+        precisions.append(precision_score(groundtruths[test], predictions, average="weighted"))
+        recalls.append(recall_score(groundtruths[test], predictions, average="weighted"))
+        fmeasures.append(f1_score(groundtruths[test], predictions, average="weighted"))
+        accuracies.append(accuracy_score(groundtruths[test], predictions))
+    disp_clf_results(precisions, recalls, fmeasures, accuracies)
+
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description="SATIN's API")
     PARSER.add_argument(
@@ -184,3 +235,4 @@ if __name__ == "__main__":
     display_lyrics()
     track_info()
     genres_word_cloud()
+    cross_validation("features.csv", n_folds=5)
