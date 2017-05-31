@@ -173,6 +173,29 @@ def genres_word_cloud(infilename="SATIN.csv"):
     plt.close()
     print("Genres word cloud image saved")
 
+def genres_info(infile="SATIN.csv"):
+    """Description of genre_info
+    Display nb genres in SATIN
+    """
+    genres = []
+    with open(infile, "r") as filep:
+        for line in filep:
+            row = line[:-1].split(",")
+            if row[-1] != "":
+                genres.append(row[-1])
+    print(len(genres))
+
+def count_nb_country(infile="SATIN.csv"):
+    """Description of count_nb_country
+    Display nb different countries references in SATIN
+    """
+    countries = []
+    with open(infile, "r") as filep:
+        for line in filep:
+            countries.append(line[0:2])
+    print(len(countries))
+    print(len(set(countries)))
+
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description="SATIN's API")
     PARSER.add_argument(
@@ -206,3 +229,5 @@ if __name__ == "__main__":
     # display_lyrics()
     # track_info(isrc="USWB11200587", mbid="e9c5b049-4bcd-4556-a86b-8759d1ac26fb")
     genres_word_cloud()
+    # genres_info()
+    # count_nb_country()
